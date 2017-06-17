@@ -1,0 +1,37 @@
+  <html>
+    <body>
+      <div class='erros'>
+           <%if(errosValidacao){%>
+              <ul>
+                  <%for(var i=0;i<errosValidacao.length;i++){%>
+                      <li><%=errosValidacao[i].param%> - <%=errosValidacao[i].msg%></li>
+                  <%}%>
+              </ul>
+           <%}%>
+      </div>
+
+      <form action="/produtos" method="post">
+
+          <div>
+            <label for="titulo">Titulo</label>
+            <input type="text" id="titulo" name="titulo" value="<%=produto.titulo%>" placeholder="coloque o titulo do livro aqui!"/>
+          </div>
+          <br/>
+          <br/>
+          <div>
+            <label for="preco">Preço</label>
+            <input type="text" id="preco" name="preco" value="<%=produto.preco%>" placeholder="coloque o preço do livro aqui!"/>
+          </div>
+          <br/>
+          <br/>
+          <div>
+            <label for="descricao">Descrição</label>
+            <textarea cols="30" rows="10"  id="descricao" name="descricao"  placeholder="coloque a descrição do livro aqui!"> <%=produto.descricao%></textarea>
+          </div>
+          <br/>
+          <br/>
+          <input type="submit" value="gravar"/>
+      </form>
+    </body>
+
+  </html>
