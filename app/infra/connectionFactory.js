@@ -23,10 +23,9 @@ function createDBConnection(){
 
 
     if(process.env.NODE_ENV == 'production') {
-        var urlDeConexao = proces.env.CLEARDB_DATABASE_URL;
-        var grupos = urlDeConexao.match(/mysql:\/\/(.*):(.*):@(.*)\/(.*)\?reconnect=true/);
+        console.log('Bonco Remoto');
         return mysql.createConnection({
-                host: grupos[3],
+                host: 'us-cdbr-iron-east-03.cleardb.net',
                 user: 'b5c21c2d00f2a5',
                 password: '93a491ba',
                 database:  'heroku_d5c943cb58e9a05'
