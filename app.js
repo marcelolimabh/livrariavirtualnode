@@ -1,8 +1,9 @@
 var app = require('./config/express')();
-// removida a linha que servia somente para carregar o arquivo de rotas.
-// var rotasProdutos = require('./app/routes/produtos')(app);
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
+app.set('io', io);
 
-app.listen(3000, function(){
+http.listen(3000, function(){
     console.log("Servidor rodando");
 });
