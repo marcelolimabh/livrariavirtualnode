@@ -23,7 +23,7 @@ function createDBConnection(){
 
 
     if(process.env.NODE_ENV == 'production') {
-        console.log('Bonco Remoto');
+        console.log('Bonco Remoto - OK');
         return mysql.createConnection({
                 host: 'us-cdbr-iron-east-03.cleardb.net',
                 user: 'b5c21c2d00f2a5',
